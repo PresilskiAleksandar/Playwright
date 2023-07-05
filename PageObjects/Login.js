@@ -1,3 +1,5 @@
+const { RegisterPage } = require('../PageObjects/Register');
+
 exports.LoginPage = class LoginPage {
     constructor(page) {
       this.page = page;
@@ -5,14 +7,18 @@ exports.LoginPage = class LoginPage {
       this.enterEmail = page.locator('#Email');
       this.enterPassword = page.locator('#Password');
       this.clickLogIn = page.locator("button[class='button-1 login-button']");
+      // this.registerPage = new RegisterPage(page); 
     }
         async goToLogin() {
             await this.loginButton.click();
     }
-  
-    async Login() {
-      await this.enterEmail.fill('test1235@gmail.com');
-      await this.enterPassword.fill('Test123');
+
+    async Login(mail) {
+      // const registerPage = new RegisterPage(this.page);
+      // await registerPage.Register();
+      // this.generatedEmail = registerPage.generatedEmail;
+      await this.enterEmail.fill(mail);
+      await this.enterPassword.fill('test123456');
       await this.clickLogIn.click();
     }
   };
