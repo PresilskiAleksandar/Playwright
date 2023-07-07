@@ -12,7 +12,7 @@ exports.changeQuantity = class changeQuantity{
       async ChangeQuantity() {
         await this.page.waitForSelector('.qty-input');
     
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 15; i++) {
             const qtyField = await this.qty.elementHandle();
     
             await qtyField.click();
