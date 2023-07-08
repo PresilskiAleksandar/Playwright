@@ -40,3 +40,10 @@ test('Select Value from DropDown',async function({page}){
     await page.locator("#hobbies").selectOption(["Reading","Singing"])
     await page.waitForTimeout(2000)
 })
+
+test('Multy Select Dropdown', async ({page})=>{
+
+    await page.goto('https://testautomationparctice.blogspot.com')
+
+    await page.selectOption('#colors',['Blue','Red','Yellow'])
+})

@@ -14,7 +14,6 @@ test('nopCommerce Something new', async ({ page }) => {
     await register.goToRegisterPage();
     await AddLevis.AddLevis();
     await expect(page.locator("#updatecart")).toBeVisible();
-    // await validatePriceLevi.validatePriceLevi();
     const priceResponce = await validatePriceLevi.validatePriceLevi()
     await expect(page.locator('.product-unit-price')).toHaveText(String(priceResponce));
 
